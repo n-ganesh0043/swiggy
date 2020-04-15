@@ -1,0 +1,63 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/main_page.css' %}">
+    <title>SWIGGY HOME PAGE</title>
+  </head>
+  <body>
+  <header>
+  <div class="cont">
+      <div id="branding">
+  <h1 style="font-family: Algerian"><span class="highlight"> GRPSPK</span> SWIGGY APPLICATION</h1>
+      </div>
+      <nav>
+    <ul>
+        <li class="current"><a href="{% url 'main' %}">Home</a> </li>
+        <li><a href="{% url 'admin_login' %}">Admin login</a> </li>
+        <li><a href="">User login</a> </li>
+        <li><a href="">Contact us</a></li>
+        <li><a href="">Report</a></li>
+    </ul>
+</nav>
+  </div>
+  </header>
+     <section id="showcase">
+<div class="cont">
+    <h1 style="font-family: Algerian">GANESH RAJ SWIGGY APPLICATION PRESENTS</h1>
+    <p>Nothing brings people together like good Food!!!!!!!!!!!!!!!!</p>
+    <p><font style="color: blue"> The next best thing to eating food, is talking about it. And we've all done our fair share of that -- us food editors especially. But there are some people who love food so much, who think about food in just the right way, that they articulate what we've always felt but haven't been able to eloquently put into words. Those people -- like M.F.K. Fisher and Julia Child -- are heroes, not only for the good work they've done, but for the great quotes they have left behind.</font></p>
+</div>
+</section>
+  <section id="boxes">
+      <div class="cont">
+          <div id="box">
+              <img src="{% static 'images/box1.jpeg' %}" width="250px" height="250px">
+              <h3>ROLLERS</h3>
+          </div>
+           <div id="box">
+              <img src="{% static 'images/box2.jpg' %}" width="250px" height="250px">
+              <h3>PEZES</h3>
+          </div>
+           <div id="box">
+              <img src="{% static 'images/box3.jpg' %}" width="250px" height="250px">
+              <h3>CHICKEN LEG PIECE</h3>
+          </div>
+      </div>
+  </section>
+ <footer>
+     <p>GRPSPK , Copyright &copy; 2020</p>
+ </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

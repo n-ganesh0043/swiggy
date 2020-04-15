@@ -1,0 +1,81 @@
+{% extends 's_admin/admin_main_page.html' %}
+{% block admin_main_page %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/adm_bck_ct.css' %}">
+    {% if request.session.status %}
+        <br><br><br>
+        {% if cf %}
+        <form method="post">
+        {% csrf_token %}
+        <table align="center">
+        <tr>
+            <th colspan="3" style="text-align: center;font-family: Algerian;font-size: 30px;background-color: wheat" height="50px">CITY OPERATIONS</th>
+        </tr>
+        <tr>
+            <th>{{ cf }}</th>
+        </tr>
+        <tr>
+            <th colspan="3" style="text-align: center"><button type="submit" class="btn btn-success btn-lg">SAVE</button></th>
+        </tr>
+            {% for x in messages %}
+                <tr>
+                <th style="text-align: center;font-size: 30px;color: red;height: 50px" colspan="2">{{ x }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+        </form>
+            {% elif update_data %}
+            <form action="{% url 'update_city_data' %}" method="post">
+            {% csrf_token %}
+            <table align="center">
+               <tr>
+                 <th colspan="3" style="text-align: center;font-family: Algerian;font-size: 30px;background-color: wheat" height="50px">CITY UPDATE OPERATION</th>
+               </tr>
+               <tr>
+                   <th style="text-align: center">CITY NO</th>
+                   <th style="text-align: center">{{ update_data.cno }}
+                   <input type="hidden" value="{{ update_data.cno }}" name="c1">
+                   </th>
+               </tr>
+            <tr>
+                <th style="text-align: center">CITY NAME</th>
+                <th style="text-align: center"><input type="text" value="{{ update_data.cname }}" name="c2"></th>
+            </tr>
+            <tr>
+               <th colspan="2" style="text-align: center"><button type="submit" class="btn btn-primary">UPDATE</button></th>
+            </tr>
+            </table>
+            </form>
+            {% endif %}
+        <br>
+        <br>
+        <table align="center" border="2" style="border-color: red">
+        <tr bgcolor="yellow">
+            <th style="font-size: 20px;text-align: center;font-family: Algerian" width="80px">NO</th>
+            <th style="font-size: 20px;text-align: center;font-family: Algerian" width="200px">CITY</th>
+            <th style="font-size: 20px;text-align: center;font-family: Algerian" width="200px">STATE</th>
+            <th style="font-size: 20px;text-align: center;font-family: Algerian" width="100px">UPDATE</th>
+            <th style="font-size: 20px;text-align: center;font-family: Algerian" width="100px">DELETE</th>
+        </tr>
+        {% for x in cdata %}
+            <tr bgcolor="aqua">
+            <th style="text-align: center">{{ x.city_no }}</th>
+            <th style="text-align: center">{{ x.city_name }}</th>
+                <th style="text-align: center">{{ x.state }}</th>
+            <th style="text-align: center">
+                <a href="{% url 'update_city' %}?cno={{ x.city_no }}&cname={{ x.city_name }}">
+                <img src="{% static 'images/refresh.png' %}" height="60px" width="50px">
+                </a>
+            </th>
+            <th style="text-align: center">
+                <a href="{% url 'delete_city' %}?cno={{ x.city_no }}">
+                <img src="{% static 'images/bin.png' %}" height="60px" width="50px">
+                </a>
+            </th>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <h3 style="text-align: center;font-size: 20px;font-family: 'Agency FB';color: red">PLEASE DO LOGIN FIRST!!!!!!!!!!</h3>
+    {% endif %}
+{% endblock %}
