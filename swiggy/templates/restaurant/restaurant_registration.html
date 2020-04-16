@@ -1,0 +1,20 @@
+{% extends 'restaurant/restaurant_log_res.html' %}
+
+{% block restaurant_log_res %}
+    {% load static %}
+<link rel="stylesheet" href="{% static 'res css/login.css' %}">
+    <form action="{% url 'restaurant_registration_saved' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="0" width="800px">
+    <tr>
+        <th style="text-align: center;font-family: Algerian;font-size: 35px;color: aqua" colspan="2" height="80px">RESTAURANT REGISTRATION PAGE</th>
+    </tr>
+    <tr>
+        <th style="text-align: center">{{ rr }}</th>
+    </tr>
+    <tr>
+        <th colspan="2" style="text-align: center"><br><button type="submit" class="btn btn-success btn-lg">REGISTER</button></th>
+    </tr>
+    </table>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'restaurant/restaurant_log_res.html' %}
+
+{% block restaurant_log_res %}
+    {% load static %}
+     <table align="center">
+
+               <tr>
+                   <th rowspan="2" style="text-align: center;font-size: 100px"><a href="{% url 'restaurant_login' %}"> login </a></th>
+                   <th rowspan="2"><img src="{% static 'res images/res head img.png' %}" height="500px"></th>
+               </tr>
+               <tr>
+                   <th style="text-align: center;font-size: 50px"><a href="{% url 'restaurant_registration' %}">REGISTRATION</a></th>
+               </tr>
+     {% for x in messages %}
+    <tr><th colspan="2">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ x }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+     </th>
+    </tr>
+{% endfor %}
+           </table>
+
+
+{% endblock %}

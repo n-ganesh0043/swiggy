@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'css/main_page.css' %}">
+      <link rel="stylesheet" href="{% static 'css/main_page2.css' %}">
     <title>Hello, world!</title>
   </head>
   <body>
@@ -22,8 +23,9 @@
         <li><a href="{% url 'main' %}">Home</a> </li>
         <li class="current"><a href="{% url 'admin_login' %}">Admin login</a> </li>
         <li><a href="">User login</a> </li>
+        <li><a href="{% url 'restaurant_log_reg' %}">restaurant</a></li>
         <li><a href="">Contact us</a></li>
-        <li><a href="">Report</a></li>
+
     </ul>
 </nav>
   </div>
@@ -36,10 +38,10 @@
              <th rowspan="3"><img src="{% static 'images/adm.jpg' %}" width="180px" height="200px"></th>
          </tr>
          <tr>
-             <th>USERNAME <input type="text" placeholder="enter u r username" name="admin_username" required></th>
+             <th style="color: aqua">USERNAME <input type="text" placeholder="enter u r username" name="admin_username" required></th>
          </tr>
          <tr>
-             <th>PASSWORD <input type="password" placeholder="*************" required name="admin_password"></th>
+             <th style="color: aqua">PASSWORD <input type="password" placeholder="*************" required name="admin_password"></th>
          </tr>
          <tr>
               <th colspan="2" style="text-align: center"><br><button type="submit" class="btn btn-success">LOGIN</button></th>

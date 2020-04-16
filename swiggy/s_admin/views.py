@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.views import View
-from s_admin.models import AdminLoginModel,Statemodel,Citymodel,Areamodel
-from .forms import Stateform,Cityform,Areaform
+from s_admin.models import AdminLoginModel,Statemodel,Citymodel,Areamodel,RestaurantType
+from .forms import Stateform,Cityform,Areaform,RestaurantTypeForm
 from django.contrib import messages
 # Create your views here.
 def Homepage(request):
@@ -107,9 +107,52 @@ class open_area(View):
             return redirect('open_area')
         else:
             return render(request,"s_admin/open_city.html",{"af":af})
+def update_area(request):
+    ano=request.GET.get('ano')
+    aname=request.GET.get('aname')
+    d1={"ano":ano,"aname":aname}
+    return render(request,"s_admin/open_area.html",{"update_data":d1,"adata":Areamodel.objects.all()})
 
+def update_area_data(request):
+    ano=request.POST.get('a1')
+    aname=request.POST.get('a2')
+    Areamodel.objects.filter(area_no=ano).update(area_name=aname)
+    return redirect('open_area')
 
 def delete_area(request):
     ano=request.GET.get('ano')
     Areamodel.objects.filter(area_no=ano).delete()
     return redirect('open_area')
+
+
+class open_type(View):
+     def get(self,request):
+         return render(request,"s_admin/open_type.html",{'rtf':RestaurantTypeForm(),'rtdata':RestaurantType.objects.all()})
+     def post(self,request):
+         rtf=RestaurantTypeForm(request.POST)
+         if rtf.is_valid():
+             rtf.save()
+             messages.success(request,"Type Added Successfully dude!!!!!!")
+             return redirect('open_type')
+         else:
+             return render(request,"s_admin/open_type.html",{'rtf':rtf})
+
+
+def delete_type(request):
+    rtno=request.GET.get('rtno')
+    RestaurantType.objects.filter(type_no=rtno).delete()
+    return redirect('open_type')
+
+
+def update_type(request):
+    rtno=request.GET.get('rtno')
+    rtname=request.GET.get('rtname')
+    d1={'rtno':rtno,'rtname':rtname}
+    return render(request,"s_admin/open_type.html",{'update_data':d1,'rtdata':RestaurantType.objects.all()})
+
+
+def update_type_data(request):
+    tno=request.POST.get('t1')
+    tname=request.POST.get('t2')
+    RestaurantType.objects.filter(type_no=tno).update(type_name=tname)
+    return redirect('open_type')
