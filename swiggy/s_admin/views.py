@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.views import View
 from s_admin.models import AdminLoginModel,Statemodel,Citymodel,Areamodel,RestaurantType
+from restaurant.models import Restaurantmodel
 from .forms import Stateform,Cityform,Areaform,RestaurantTypeForm
 from django.contrib import messages
 # Create your views here.
@@ -156,3 +157,34 @@ def update_type_data(request):
     tname=request.POST.get('t2')
     RestaurantType.objects.filter(type_no=tno).update(type_name=tname)
     return redirect('open_type')
+
+
+def restro_menu(request):
+    return render(request,"s_admin/restro_menu.html")
+
+
+def pending_restro(request):
+    prest=Restaurantmodel.objects.filter(restro_status='pending')
+    return render(request,"s_admin/pending_restro.html",{"data":prest})
+
+
+def rejected_restro(request):
+    rno=request.GET.get('rno')
+    Restaurantmodel.objects.filter(restro_id=rno).update(restro_status='rejected')
+    return redirect('pending_restro')
+
+
+def show_rejected_restro(request):
+    rs=Restaurantmodel.objects.filter(restro_status='rejected')
+    return render(request,"s_admin/show_rejected_restro.html",{"data":rs})
+
+
+def approved_restro(request):
+    rno=request.GET.get('rno')
+    Restaurantmodel.objects.filter(restro_id=rno).update(restro_status='accepted')
+    return redirect('pending_restro')
+
+
+def show_accepted_restro(request):
+    rs=Restaurantmodel.objects.filter(restro_status='accepted')
+    return render(request,"s_admin/show_accepted_restro.html",{"data":rs})

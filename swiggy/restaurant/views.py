@@ -33,7 +33,7 @@ def restaurant_login_saved(request):
     rus=request.POST.get('rl1')
     rpsd=request.POST.get('rl2')
     try:
-        Restaurantmodel.objects.get(restro_name=rus,restro_password=rpsd,restro_status='Accepted')
+        Restaurantmodel.objects.get(restro_name=rus,restro_password=rpsd,restro_status='accepted')
         return render(request,"restaurant/dummyyyyyy.html")
     except Restaurantmodel.DoesNotExist:
         messages.error(request,"u dont have permission to login please go and register first ..Already register means wait for the the email conformation ... Thank you!!!!!!!!")

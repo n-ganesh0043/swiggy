@@ -47,5 +47,13 @@ urlpatterns = [
     path('open_type/',views.open_type.as_view(),name='open_type'),
     path('update_type/',views.update_type,name='update_type'),
     path('update_type_data/',views.update_type_data,name='update_type_data'),
-    path('delete_type/',views.delete_type,name='delete_type')
+    path('delete_type/',views.delete_type,name='delete_type'),
+
+    #Restaurant#
+    path('restro_menu/',views.restro_menu,name='restro_menu'),
+    path('pending_restro/',views.pending_restro,name='pending_restro'),
+    path('rejected_restro/',views.rejected_restro,name='rejected_restro'),
+    path('show_rejected_restro/',views.show_rejected_restro,name='show_rejected_restro'),
+    path('approved_restro/',views.approved_restro,name='approved_restro'),
+    path('show_accepted_restro/',views.show_accepted_restro,name='show_accepted_restro')
 ]

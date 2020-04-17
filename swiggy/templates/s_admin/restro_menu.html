@@ -1,0 +1,34 @@
+{% extends 's_admin/admin_main_page.html' %}
+
+{% block admin_main_page %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/adm_res_menu.css' %}">
+    <br>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="{% static 'images/res_menu_icon.png' %}" height="40px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'pending_restro' %}" style="width: 260px"><font style="font-family: Algerian;color: orange;font-weight: bolder"> PENDING RESTAURANTS</font></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'show_accepted_restro' %}" style="width: 320px"><font style="font-family: Algerian;color: orange;font-weight: bolder">APPROVAL RESTAURANTS</font></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'show_rejected_restro' %}" style="width: 320px"><font style="font-family: Algerian;color: orange;font-weight: bolder">REJECTED RESTAURANTS</font></a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" style="width: 270px"><font style="font-family: Algerian;color: orange;font-weight: bolder">SEND MESSAGE</font></a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><font style="font-family: Algerian;color: orange;font-weight: bolder">VIEW MESSAGE</font></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% endblock %}
