@@ -23,7 +23,7 @@
     </tr>
     <tr>
         <th><a href="{% url 'restaurant_registration' %}">REGISTER HERE</a> </th>
-        <th style="text-align: right" colspan="2"><a href="">Forget password?</a> </th>
+        <th style="text-align: right" colspan="2"><a href="{% url 'forget_password_page' %}">Forget password?</a> </th>
     </tr>
          {% for x in messages %}
     <tr><th colspan="2">

@@ -23,5 +23,11 @@ urlpatterns = [
     path('restaurant_login/',views.restaurant_login,name='restaurant_login'),
     path('restaurant_registration/',views.restaurant_registration,name='restaurant_registration'),
     path('restaurant_registration_saved/',views.restaurant_registration_saved,name='restaurant_registration_saved'),
-    path('restaurant_login_saved/',views.restaurant_login_saved,name='restaurant_login_saved')
+    path('restaurant_login_saved/',views.restaurant_login_saved,name='restaurant_login_saved'),
+    path('restaurant_home/',views.restaurant_home,name='restaurant_home'),
+
+    #forget password#
+
+    path('forget_password_page/',views.forget_password_page,name='forget_password_page'),
+    path('forget_password_email_page/',views.forget_password_email_page,name='forget_password_email_page')
 ]

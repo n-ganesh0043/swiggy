@@ -1,0 +1,13 @@
+{% extends 'restaurant/restaurant_log_res.html' %}
+{% block restaurant_log_res %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'res css/login.css' %}">
+    <br>
+    <br>
+    {% if request.session.status %}
+        <h1 style="text-align: center"> WELCOME</h1>
+        {% else %}
+           <h3 style="text-align: center;font-size: 20px;font-family: 'Agency FB';color: red">PLEASE DO LOGIN FIRST!!!!!!!!!!</h3>
+    {% endif %}
+
+{% endblock %}
