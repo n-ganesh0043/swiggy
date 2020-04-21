@@ -188,3 +188,7 @@ def approved_restro(request):
 def show_accepted_restro(request):
     rs=Restaurantmodel.objects.filter(restro_status='accepted')
     return render(request,"s_admin/show_accepted_restro.html",{"data":rs})
+
+
+def contact_us(request):
+    return render(request,"s_admin/contact_us.html")

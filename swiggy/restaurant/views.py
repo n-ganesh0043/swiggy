@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from restaurant.forms import Restaurantform
-from swiggy.settings import EMAIL_HOST_USER
+from swiggy import settings as se
 from django.core.mail import send_mail
 from restaurant.models import Restaurantmodel
 
@@ -58,11 +58,19 @@ def forget_password_page(request):
 
 
 def forget_password_email_page(request):
+     eml=request.POST.get('em1')
+     try:
+         subject='GRPSPK PASSWORD VERIFICATION'
+         message='hiii please click the link and follow the flow',
+         send_mail(
+             subject,
+             message,
+             se.EMAIL_HOST_USER,
+             [eml]
+         )
+         print(send_mail)
+         return render(request, "restaurant/forget_password_email_page.html")
+     except:
+         messages.error(request,"invalid user")
+         return redirect('forget_password_page')
 
-    send_mail(
-        'GRPSPK PASSWORD VERIFICATION',
-        'hiii please click the link and follow the flow',
-        'ganeshraj0043@gmail.com',
-        ['ganeshraj000043@gmail.com']
-    )
-    return render(request,"restaurant/forget_password_email_page.html")

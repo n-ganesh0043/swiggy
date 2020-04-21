@@ -1,0 +1,19 @@
+body{
+    background-image: url("../images/contact us.jpg");
+    background-size: 100%;
+}
+.cont{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+#boxiss{
+    margin-top:20px ;
+}
+
+#boxiss .boxies{
+    float: left;
+
+    padding: 50px;
+
+}

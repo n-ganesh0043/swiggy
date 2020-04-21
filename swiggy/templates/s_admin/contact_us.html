@@ -9,11 +9,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'css/main_page.css' %}">
-      <link rel="stylesheet" href="{% static 'css/main_page2.css' %}">
-    <title>Hello, world!</title>
+      <link rel="stylesheet" href="{% static 'css/contact_us.css' %}">
+
+    <title>CONTACT US PAGE</title>
   </head>
   <body>
-     <header>
+         <header>
   <div class="cont">
       <div id="branding">
   <h1 style="font-family: Algerian"><span class="highlight"> GRPSPK</span> SWIGGY APPLICATION</h1>
@@ -21,38 +22,32 @@
       <nav>
     <ul>
         <li><a href="{% url 'main' %}">Home</a> </li>
-        <li class="current"><a href="{% url 'admin_login' %}">Admin login</a> </li>
+        <li><a href="{% url 'admin_login' %}">Admin login</a> </li>
         <li><a href="">User login</a> </li>
         <li><a href="{% url 'restaurant_log_reg' %}">restaurant</a></li>
-        <li><a href="{% url 'contact_us' %}">Contact us</a></li>
+        <li class="current"><a href="{% url 'contact_us' %}">Contact us</a></li>
 
     </ul>
 </nav>
   </div>
   </header>
-     <h1 style="font-family: 'Arial Black';font-size: 30px;text-align: center;padding-top: 30px;color: yellow">ADMIN LOGIN PAGE</h1>
-     <form method="post">
-         {% csrf_token %}
-     <table align="center" border="0">
-         <tr>
-             <th rowspan="3"><img src="{% static 'images/adm.jpg' %}" width="180px" height="200px"></th>
-         </tr>
-         <tr>
-             <th style="color: aqua">USERNAME <input type="text" placeholder="enter u r username" name="admin_username" required></th>
-         </tr>
-         <tr>
-             <th style="color: aqua">PASSWORD <input type="password" placeholder="*************" required name="admin_password"></th>
-         </tr>
-         <tr>
-              <th colspan="2" style="text-align: center"><br><button type="submit" class="btn btn-success">LOGIN</button></th>
-         </tr>
-         {% for x in messages %}
-             <tr>
-             <th style="font-family: Arial;font-size: 20px;color: red;text-align: center" colspan="2">{{ x }}</th>
-             </tr>
-         {% endfor %}
-     </table>
-     </form>
+          <section id="boxiss">
+      <div class="cont">
+          <div class="boxies">
+              <img src="{% static 'images/demographic.png' %}">
+              <h3 style="color: red">1st street near govt school<br> kesaval nagar,vedhayapalem, <br>NELLORE-4 ...524004</h3>
+          </div>
+           <div class="boxies">
+              <img src="{% static 'images/gmail.png' %}">
+              <h3 style="color: red">GANESHRAJ0043@gmail.com</h3>
+          </div>
+           <div class="boxies">
+              <img src="{% static 'images/whatsapp.png' %}">
+              <h3 style="color: red;text-align: center">7036032088</h3>
+          </div>
+      </div>
+  </section>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

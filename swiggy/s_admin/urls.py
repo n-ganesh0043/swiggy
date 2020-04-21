@@ -55,5 +55,8 @@ urlpatterns = [
     path('rejected_restro/',views.rejected_restro,name='rejected_restro'),
     path('show_rejected_restro/',views.show_rejected_restro,name='show_rejected_restro'),
     path('approved_restro/',views.approved_restro,name='approved_restro'),
-    path('show_accepted_restro/',views.show_accepted_restro,name='show_accepted_restro')
+    path('show_accepted_restro/',views.show_accepted_restro,name='show_accepted_restro'),
+
+    #Contact us#
+    path('contact_us/',views.contact_us,name='contact_us')
 ]
