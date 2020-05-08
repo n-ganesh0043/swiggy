@@ -11,9 +11,12 @@ body{
     margin-top:20px ;
 }
 
-#boxiss .boxies{
+#boxiss .boxies {
     float: left;
-
     padding: 50px;
+}
 
+.boxies a:hover{
+    font-size: x-large;
+    color: red;
 }

@@ -12,3 +12,4 @@ class Restaurantmodel(models.Model):
     restro_otp=models.IntegerField()
     restro_status=models.CharField(max_length=20)
 
+

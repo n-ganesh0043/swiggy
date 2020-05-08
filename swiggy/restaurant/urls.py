@@ -15,19 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.contrib.auth import views as auth_views
 from restaurant import views
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('restaurant_log_reg/',views.restaurant_log_reg,name='restaurant_log_reg'),
     path('restaurant_login/',views.restaurant_login,name='restaurant_login'),
     path('restaurant_registration/',views.restaurant_registration,name='restaurant_registration'),
     path('restaurant_registration_saved/',views.restaurant_registration_saved,name='restaurant_registration_saved'),
     path('restaurant_login_saved/',views.restaurant_login_saved,name='restaurant_login_saved'),
-    path('restaurant_home/',views.restaurant_home,name='restaurant_home'),
+
 
     #forget password#
 
     path('forget_password_page/',views.forget_password_page,name='forget_password_page'),
-    path('forget_password_email_page/',views.forget_password_email_page,name='forget_password_email_page')
+    path('reset_password_email/',views.reset_password_email,name='reset_password_email'),
+    path('otp_validate/',views.otp_validate,name='otp_validate'),
+    path('reset_password_conformation/',views.reset_password_conformation,name='reset_password_conformation')
+
 ]

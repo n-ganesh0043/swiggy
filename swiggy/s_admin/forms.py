@@ -1,5 +1,7 @@
 from django import forms
+
 from s_admin.models import Statemodel,Citymodel,Areamodel,RestaurantType
+from django.contrib.auth.models import User
 
 class Stateform(forms.ModelForm):
     class Meta:

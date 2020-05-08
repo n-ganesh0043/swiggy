@@ -5,5 +5,5 @@ class Restaurantform(forms.ModelForm):
     class Meta:
         model=Restaurantmodel
         fields="__all__"
-        exclude=('restro_otp','restro_status','restro_id')
+        exclude=('restro_status','restro_id')
         labels={'restro_name':'RESTAURANT NAME','restro_contact_no':'CONTACT NO','restro_area':'RESTAURANT AREA','restro_type':'RESTAURANT TYPE','restro_email':'EMAIL'}
